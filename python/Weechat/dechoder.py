@@ -51,7 +51,7 @@ def autococktography(data, modifier, modifier_data, string):
         return(string)
     prefix, message = raw_message.split("\t", 1)
     cockstring = api.get_cockstring(message)
-    if not ALLOW_MIXED_SECURITY and cockstring is not message:
+    if not ALLOW_MIXED_SECURITY and not message == cockstring:
         return(string)
     if not cockstring:
         return(string)
