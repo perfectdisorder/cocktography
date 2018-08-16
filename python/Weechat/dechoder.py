@@ -98,7 +98,8 @@ def enchoder_cmd(data, buffer, args):
 
 
 def dechoder_cmd(data, buffer, args):
-    dechoded = "[dechoded] {}".format(api.dechode(args))
+    msg, strokes = api.dechode(args)
+    dechoded = "[dechoded {}s] {}".format(strokes, msg)
     weechat.prnt(buffer, format_for_weechat(dechoded))
     return weechat.WEECHAT_RC_OK
 
